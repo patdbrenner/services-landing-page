@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Services Page</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="container jumbotron" style="padding-top: 20px; padding-bottom: 20px; background-color:#6f5887">
+    <h1 class="text-center text-white" style="text-shadow: grey 2px 2px;">Update {{ service.title }}</h1>
+    </div>
+    <br>
+    <form action="/update/{{ service.id }}" method="POST" class="row g-3" style="display: flex; justify-content: center;">
+        <div class="col-auto">
+            <input type="text" name="title" id="title" value="{{ service.title }}" style="height: 40px;">
+        </div>
+        <div class="col-auto">
+            <input type="text" name="content" id="content" value="{{ service.content }}" style="height: 40px;">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary ">Update</button>
+        </div>
+        <div class="col-auto">
+            <a href="/" class="btn btn-primary">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
